@@ -32,8 +32,11 @@ const addCandidate = async (req, res) => {
       Salary: req.body.Salary,
       Candidate_link: req.body.Candidate_link,
       Candidate_doc: req.body.Candidate_doc,
+      Projects: req.body.Projects,
+      Interviews: req.body.Interviews,
     });
     await candidate.save();
+
     console.log("success");
   } catch (err) {
     return res.status(500).json({ message: err.message });

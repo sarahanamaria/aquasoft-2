@@ -1,10 +1,9 @@
 const connectToDB = require("./db"); // import our connection to the DB from the db.js file
 const express = require("express");
 const cors = require("cors"); // allows us to make requests from one website to another
-const routes = require("./routes");
 const interviewRoutes = require("./interviewRoutes");
 const candidateRoutes = require("./candidateRoutes");
-
+const routes = require("./routes");
 const app = express();
 app.use(express.json({ extended: false })); // activate the body parser
 app.use(cors());
@@ -26,13 +25,15 @@ app.put("/updateInterview/:id", interviewRoutes.updateInterview);
 app.delete("/deleteInterview:/id", interviewRoutes.deleteInterview);
 
 // ROUTES for the "Candidates" collection
-app.get('/getAllCandidates', candidateRoutes.getAllCandidates);
-app.post('/newCandidate', candidateRoutes.addCandidate);
-app.delete('/deleteCandidate/:id', candidateRoutes.deleteCandidate);
-app.put('/putCandidate/:id', candidateRoutes.updateCandidate);
-app.get("/joinCandidate", candidateRoutes.join);
+
+app.get("/getAllCandidates", candidateRoutes.getAllCandidates);
+app.get("/joinCandidate/", candidateRoutes.join);
+app.post("/newCandidate", candidateRoutes.addCandidate);
+app.delete("/deleteCandidate/:id", candidateRoutes.deleteCandidate);
+app.put("/putCandidate/:id", candidateRoutes.updateCandidate);
+
+
 //run server
 app.listen(port, () => {
   console.log(`Server pornit la portul ${port}`);
 });
-
