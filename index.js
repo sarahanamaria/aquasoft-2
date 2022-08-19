@@ -30,7 +30,7 @@ app.get('/getAllCandidates', candidateRoutes.getAllCandidates);
 app.post('/newCandidate', candidateRoutes.addCandidate);
 app.delete('/deleteCandidate/:id', candidateRoutes.deleteCandidate);
 app.put('/putCandidate/:id', candidateRoutes.updateCandidate);
-
+app.get("/joinCandidate", candidateRoutes.join);
 //run server
 app.listen(port, () => {
   console.log(`Server pornit la portul ${port}`);

@@ -16,7 +16,7 @@ const candidateSchema = new Schema({
   },
   Interviews: {
     type: [mongoose.SchemaTypes.ObjectId],
-    ref: "Inerview",
+    ref: "Interview",
   },
 });
 
