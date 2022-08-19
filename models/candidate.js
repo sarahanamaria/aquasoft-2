@@ -12,13 +12,13 @@ const candidateSchema = new Schema({
   Candidate_doc: { type: String, required: false },
   Projects: {
     type: [mongoose.SchemaTypes.ObjectId],
-    ref: "project",
+    ref: project,
   },
   Interviews: {
     type: [mongoose.SchemaTypes.ObjectId],
-    ref: "Inerview",
+    ref: Interview,
   },
 });
 
 // Export schema
-module.exports = Candidate = model("candidate", candidateSchema);
+module.exports = model("candidate", candidateSchema);

@@ -1,61 +1,62 @@
-const { Schema, model } = require('mongoose')
-const projectSchema = new Schema({//define how a project looks like
+const { Schema, model } = require("mongoose");
+const projectSchema = new Schema({
+  //define how a project looks like
   project_no: {
     type: String,
-    required: false
+    required: false,
   },
   project_short_description: {
     type: String,
-    required: false
+    required: false,
   },
   request_date: {
     type: Date,
-    required: false
+    required: false,
   },
   project_start_date: {
     type: Date,
-    required: false
+    required: false,
   },
   project_duration: {
     type: Number,
-    required: false
+    required: false,
   },
   project_currency: {
     type: String,
-    required: false
+    required: false,
   },
   client: {
     type: String,
-    required: false
+    required: false,
   },
   working_location: {
     type: String,
-    required: false
+    required: false,
   },
   travel_required: {
     type: String,
-    required: false
+    required: false,
   },
   team_members: {
     type: Number,
-    required: false
+    required: false,
   },
   working_hours: {
     type: String,
-    required: false
+    required: false,
   },
   mandatory_skills: {
     type: String,
-    required: false
+    required: false,
   },
   nice_to_have_skills: {
     type: String,
-    required: false
+    required: false,
   },
   to_do: {
     type: String,
-    required: false
-  }
-})
+    required: false,
+  },
+});
 
-module.exports = Project = model('project', projectSchema)//export it
+module.exports = model("project", projectSchema); //export it
