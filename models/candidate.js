@@ -1,4 +1,6 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model, mongoose } = require("mongoose");
+const project = require("./project");
+const Interview = require("./Interview");
 
 // Create the Schema for the interview collection.
 const candidateSchema = new Schema({
@@ -7,8 +9,16 @@ const candidateSchema = new Schema({
   Start_date: { type: Date, required: false },
   Salary: { type: Number, required: false },
   Candidate_link: { type: String, required: false },
-  Candidate_doc: { type: String, required: false }
-})
+  Candidate_doc: { type: String, required: false },
+  Projects: {
+    type: [mongoose.SchemaTypes.ObjectId],
+    ref: "project",
+  },
+  Interviews: {
+    type: [mongoose.SchemaTypes.ObjectId],
+    ref: "Inerview",
+  },
+});
 
 // Export schema
-module.exports = Candidate = model('candidate', candidateSchema)
+module.exports = Candidate = model("candidate", candidateSchema);
