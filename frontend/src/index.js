@@ -1,11 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import projectsReducer from "./reducers/ProjectsReducer";
 import updateReducer from "./reducers/UpdateReducer";
+import "bootstrap/dist/css/bootstrap.css";
+import ReactDOM from "react-dom/client";
 
 // Create a store using redux toolkit. This holds all the reducers. - Vlad Talimba
 const store = configureStore({
