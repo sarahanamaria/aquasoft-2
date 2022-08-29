@@ -1,6 +1,6 @@
 const Candidate = require("./models/candidate");
 
-// Create a GET route to get all the candidates.
+// Create a GET route to get all the candidates. - Vlad Talimba
 const getAllCandidates = async (req, res) => {
   try {
     const candidate = await Candidate.find({});
@@ -10,7 +10,7 @@ const getAllCandidates = async (req, res) => {
   }
 };
 
-// Create a GET route that will return a candidate and it's projects and interviews (join).
+// Create a GET route that will return a candidate and it's projects and interviews (join). - Vlad Talimba
 const join = async (req, res) => {
   try {
     const candidate = await Candidate.where("Candidate_name")
@@ -22,7 +22,7 @@ const join = async (req, res) => {
     return res.status(500).json({ message: err.message });
   }
 };
-// Create a POST route to add a candidate.
+// Create a POST route to add a candidate. - Vlad Talimba
 const addCandidate = async (req, res) => {
   try {
     const candidate = new Candidate({
@@ -35,15 +35,15 @@ const addCandidate = async (req, res) => {
       Projects: req.body.Projects,
       Interviews: req.body.Interviews,
     });
-    await candidate.save();
-
+    await candidate.save(); //save the project with given data in the request body
+    res.json();
     console.log("success");
   } catch (err) {
     return res.status(500).json({ message: err.message });
   }
 };
 
-// Create a PUT route to update a candidate using the ID.
+// Create a PUT route to update a candidate using the ID. - Vlad Talimba
 const updateCandidate = async (req, res) => {
   try {
     const candidate = await Candidate.updateOne(
@@ -56,7 +56,7 @@ const updateCandidate = async (req, res) => {
   }
 };
 
-// Create a DELETE route to delete a candidate using the ID.
+// Create a DELETE route to delete a candidate using the ID. - Vlad Talimba
 const deleteCandidate = async (req, res) => {
   try {
     await Candidate.deleteOne({ _id: req.params.id });
@@ -66,7 +66,7 @@ const deleteCandidate = async (req, res) => {
   }
 };
 
-// Export routes.
+// Export routes. - Vlad Talimba
 exports.addCandidate = addCandidate;
 exports.getAllCandidates = getAllCandidates;
 exports.deleteCandidate = deleteCandidate;

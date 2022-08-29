@@ -2,7 +2,7 @@ const { Schema, model, mongoose } = require("mongoose");
 const project = require("./project");
 const Interview = require("./Interview");
 
-// Create the Schema for the interview collection.
+// Create the Schema for the interview collection. - Vlad Talimba
 const candidateSchema = new Schema({
   Candidate_name: { type: String, required: false },
   Email: { type: String, required: false },
@@ -16,11 +16,9 @@ const candidateSchema = new Schema({
   },
   Interviews: {
     type: [mongoose.SchemaTypes.ObjectId],
-
     ref: Interview,
-
   },
 });
 
-// Export schema
+// Export schema - Vlad Talimba
 module.exports = model("candidate", candidateSchema);

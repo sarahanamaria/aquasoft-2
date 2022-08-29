@@ -24,14 +24,13 @@ app.post("/interview", interviewRoutes.addInterview);
 app.put("/updateInterview/:id", interviewRoutes.updateInterview);
 app.delete("/deleteInterview:/id", interviewRoutes.deleteInterview);
 
-// ROUTES for the "Candidates" collection
+// ROUTES for the "Candidates" collection - Vlad Talimba
 
 app.get("/getAllCandidates", candidateRoutes.getAllCandidates);
 app.get("/joinCandidate/", candidateRoutes.join);
 app.post("/newCandidate", candidateRoutes.addCandidate);
 app.delete("/deleteCandidate/:id", candidateRoutes.deleteCandidate);
 app.put("/putCandidate/:id", candidateRoutes.updateCandidate);
-
 
 //run server
 app.listen(port, () => {

@@ -39,6 +39,7 @@ const addProject = async (req, res) => {
       to_do: req.body.to_do,
     });
     await project.save(); //save the project with given data in the request body
+    res.json();
     console.log("success");
   } catch (err) {
     return res.status(500).json({ message: err.message });

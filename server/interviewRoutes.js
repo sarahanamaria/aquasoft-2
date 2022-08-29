@@ -19,7 +19,8 @@ const addInterview = async (req, res) => {
       Interview_duration: req.body.Interview_duration,
       Interviewer: req.body.Interviewer,
     });
-    await interview.save();
+    await interview.save(); //save the project with given data in the request body
+    res.json();
   } catch (err) {
     return res.status(500).json({ message: err.message });
   }
